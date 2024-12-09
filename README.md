@@ -1,2 +1,2 @@
 # java-new-features
-description java new features of every version.
+describe java new features of every version.
