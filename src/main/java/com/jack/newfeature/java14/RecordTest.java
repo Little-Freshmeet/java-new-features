@@ -16,8 +16,8 @@ class Outer {
     int out;
     record Inner(String name) {
         // there will be a compile error.
-        public void test() {
-            System.out.println(out);
-        }
+//        public void test() {
+//            System.out.println(out);
+//        }
     }
 }

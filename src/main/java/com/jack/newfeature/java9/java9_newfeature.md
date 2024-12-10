@@ -8,3 +8,4 @@
 7. add new methods of collection framework, e.g. List.of, Set.of, Map.of
 8. Unified logging in JVM.
 9. provide List.of(), Set.of(), Map.of(), Map.ofEntries() methods for immutable list, set, map.
+10. it can add a private method in interface.

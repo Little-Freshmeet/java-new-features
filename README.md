@@ -25,16 +25,34 @@ Welcome to implement more new features of java new version.
 5. 改进的javadoc功能，支持在文档是搜索模块信息。
 6. 接口中可以有private方法，private方法必须是实现方法，抽象方法不能是private。因为default方法必须是public，为了将多个default方法中共同的逻辑抽象出来，并且不想让外部访问到，因此就有了private方法。
 ```java
-public interface PrivateMehod {
+public class PrivateMethodTest {
+    public static void main(String[] args) {
+        int i = 4, j = 5;
+        MyInterface myInterface = new MyClass();
+        myInterface.add(i, j);
+        myInterface.product(i, j);
+    }
+}
 
-    default void method() {
-        System.out.println("default method");
-        complexMethod();
+
+interface MyInterface {
+    private void log(String param) {
+        System.out.println("private method in interface: " + param);
     }
 
-    private void complexMethod() {
-        System.out.println("private method");
+    default void add(int i, int j) {
+        log("add method in interface");
+        System.out.println("i + j = " + (i + j));
     }
+
+    default void product(int i, int j) {
+        log("product method in interface");
+        System.out.println("i * j = " + (i * j));
+    }
+}
+
+class MyClass implements MyInterface {
+
 }
 ```
 7. ***提供了List.of, Map.of(), Set.of()和Map.ofEntries()方法, there can be no duplicate elements in Set.of()***
