@@ -371,6 +371,18 @@ public class RecordTest {
 record User(String name, int age) {
 }
 ```
+inner record class must be static, when we compiled the following codes, it will show us a compile error: variable out must be static. Because record Inner must be static by default. and non-static variable can be accessed in a static class.
+```java
+class Outer {
+    int out;
+    record Inner(String name) {
+        
+        public void test() {
+            System.out.println(out);
+        }
+    }
+}
+```
 3. 改进NPE异常的抛出信息，会指明是具体哪个变量是null，防止同一行代码中调用多个方法时不好排查。不用像之前那样自己去找哪个变量甚至是debug来找出哪个变量为null。
 ```java
 public class NewNPETest {
