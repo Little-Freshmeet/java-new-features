@@ -598,21 +598,40 @@ public class StringTemplateTest {
 
 
 # Appendix
-[java 1.5-1.7](https://docs.oracle.com/javase/7/docs/technotes/guides/language/enhancements.html)
+new feature link of Oracle offical website:
+
+[Java 1.5-1.7](https://docs.oracle.com/javase/7/docs/technotes/guides/language/enhancements.html)
+
 [Java 1.8](https://docs.oracle.com/javase/8/docs/technotes/guides/language/enhancements.html)
+
 [Java 9](https://docs.oracle.com/javase/9/whatsnew/toc.htm#JSNEW-GUID-C23AFD78-C777-460B-8ACE-58BE5EA681F6)
+
 [Java 10](https://docs.oracle.com/javase/10/whatsnew/whatsnew.html)
-[java 11](https://docs.oracle.com/en/java/javase/11/whatsnew/index.html)
+
+[Java 11](https://docs.oracle.com/en/java/javase/11/whatsnew/index.html)
+
 [Java 12](https://docs.oracle.com/en/java/javase/12/whatsnew/index.html)
+
 [Java 13](https://docs.oracle.com/en/java/javase/13/whatsnew/index.html)
+
 [Java 14](https://docs.oracle.com/en/java/javase/14/whatsnew/index.html)
+
 [Java 15](https://docs.oracle.com/en/java/javase/15/whatsnew/index.html)
+
 [Java 16](https://docs.oracle.com/en/java/javase/16/whatsnew/index.html)
-[Java 17)(https://docs.oracle.com/en/java/javase/17/whatsnew/index.html)
+
+[Java 17](https://docs.oracle.com/en/java/javase/17/whatsnew/index.html)
+
 [Java 18](https://docs.oracle.com/en/java/javase/18/whatsnew/index.html)
+
 [Java 19](https://docs.oracle.com/en/java/javase/19/whatsnew/index.html)
+
 [Java 20](https://docs.oracle.com/en/java/javase/20/whatsnew/index.html)
+
 [Java 21](https://docs.oracle.com/en/java/javase/21/whatsnew/index.html)
+
 [Java 22](https://docs.oracle.com/en/java/javase/22/whatsnew/index.html)
+
 [Java 23](https://docs.oracle.com/en/java/javase/23/whatsnew/index.html)
+
 [Java 24](https://openjdk.org/projects/jdk/24/) ，此为 Java 24 的 OpenJDK 项目页面，由于 Java 24 尚未正式发布，可通过该页面关注其特性开发进展.
