@@ -600,9 +600,7 @@ public class StringTemplateTest {
 # Appendix
 new feature link of Oracle offical website:
 
-[Java 1.5-1.7](https://docs.oracle.com/javase/7/docs/technotes/guides/language/enhancements.html)
-
-[Java 1.8](https://docs.oracle.com/javase/8/docs/technotes/guides/language/enhancements.html)
+[Java 1.5-1.8](https://docs.oracle.com/javase/8/docs/technotes/guides/language/enhancements.html)
 
 [Java 9](https://docs.oracle.com/javase/9/whatsnew/toc.htm#JSNEW-GUID-C23AFD78-C777-460B-8ACE-58BE5EA681F6)
 
