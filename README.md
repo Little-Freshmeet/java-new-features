@@ -3,24 +3,29 @@ describe java new features of every version.
 Welcome to implement more new features of java new version.
 
 
-
+# jdk1.5
+1. Generic
+2. Annotations
+3. Autoboxing/unboxing
+3. Static import
+4. 
 # jdk8(LTS)
-1. lambda expression
+1. Lambda expression
 2. Function interface
 3. Stream API
-4. method reference
-5. default method(日常开发中不要用，default method必须是public且是可以被覆盖的。当一个实现类继承多个接口时，且这些接口有相同的default方法定义，就存在了冲突，这时实现类必须要重写这个冲突的方法)
-6. repeatable annotation(相同的注解可以在一个地方使用多次)
-7. new date type
+4. Method reference
+5. Default method(日常开发中不要用，default method必须是public且是可以被覆盖的。当一个实现类继承多个接口时，且这些接口有相同的default方法定义，就存在了冲突，这时实现类必须要重写这个冲突的方法)
+6. Repeatable annotation(相同的注解可以在一个地方使用多次)
+7. New date type
 8. Optional
 9. Nashorn JavaScript（新的js引擎）
 10. G1(正式版)
 11. 新引入了一些并发工具类，CompletableFuture，StampedLock，LongAdder, LongAccumulator, DoubleAdder, DoubleAccumulator。
 
 # jdk9(2017.9)
-1. ***module system (project jigsaw)***
+1. ***Module system (project jigsaw)***
 2. ***JShell***
-3. ***new http client tools(incubator module)***
+3. ***New http client tools(incubator module)***
 4. ***String多了压缩处理，会对字符串内容先判断是否是latin1编码，如果是，则直接用latin1编码进行编码，提高效率***
 5. 改进的javadoc功能，支持在文档是搜索模块信息。
 6. 接口中可以有private方法，private方法必须是实现方法，抽象方法不能是private。因为default方法必须是public，为了将多个default方法中共同的逻辑抽象出来，并且不想让外部访问到，因此就有了private方法。
@@ -377,7 +382,7 @@ public class InstanceOfTest {
     }
 }
 ```
-2. ***record keyword(preview, finalized in java16)引入record类型，用于创建只读类，即没有set方法，对象在初始化之后就不能再修改属性值***
+2. ***add record keyword(preview, finalized in java16)，introduce the record type. It's used for creation of readonly class. It means the class doesn't have set methods and the value of variable won't be modified after object created***
 ```java
 public class RecordTest {
     public static void main(String[] args) {
@@ -390,6 +395,7 @@ record User(String name, int age) {
 }
 ```
 inner record class must be static, when we compiled the following codes, it will show us a compile error: variable out must be static. Because record Inner must be static by default. and non-static variable can be accessed in a static class.
+***Note: In JDK17, inner Enum, inner Interface, inner Record will be static by default.***
 ```java
 class Outer {
     int out;
@@ -398,6 +404,40 @@ class Outer {
         public void test() {
             System.out.println(out);
         }
+    }
+}
+```
+
+if you want to define constructor of record class by yourself,
+a. if the params are not the same with default constructor, it must invoke the default constructor directly or indirectly.
+b. if the params are the same, you can use the following method, it will omit assignments of variable and parentheses after the method name.
+```java
+public class RecordConstructorTest {
+    public static void main(String[] args) {
+        Person person = new Person("jack", 12);
+    }
+}
+
+record Person(String name, int age) {
+    // define the constructor which has the same params, it doesn't need to write () behind the name
+    public Person {
+
+        // it will omit this.name = name and this.age = age, but actually it will do it
+        if (age > 10) {
+            System.out.println("age is too big");
+        }
+    }
+
+
+    public Person(String name, int age, int gender) {
+        // must invoke the default constructor directly or indirectly
+        this(name, age);
+        System.out.println("gender is " + gender);
+    }
+
+    public Person(String name, int age, int gender, String address) {
+        // invoke the default constructor indirectly
+        this(name, age, gender);
     }
 }
 ```
@@ -415,7 +455,7 @@ public class NewNPETest {
 Exception in thread "main" java.lang.NullPointerException: Cannot invoke "com.jack.newfeature.java14.User.age()" because "user" is null
 	at com.jack.newfeature.java14.NewNPETest.main(NewNPETest.java:6)
 ```
-4. ***删除CMS回收器***
+4. ***Removal of CMS Garbage Collector***
 5. switch expressions(finalized)
 
 # jdk15(2020.9)
