@@ -220,7 +220,7 @@ public class FilesTest {
 }
 ```
 6. removal of JavaFX
-7. ***G1成为默认回收器***
+7. ***G1 becomes the default Garbage Collector***
 
 # jdk12(2019.3)
 1. switch expressions(preview, finalized in java14), ***switch表达式增强，可以有返回值，在java14 finalized***
@@ -336,21 +336,23 @@ public class NumberFormatTest {
 # jdk13(2019.9)
 1. ***switch表达式增加，可以使用yield关键字来返回结果，相当于return。如果没有结果则相当于break。***
 ```java
-// we also can use traditional switch to return value, but we must use yield keyword
-// and yield contains break.
-int gender = 1;
-String sex = switch(gender) {
-    case 1:
-        yield "male";
-    case 2:
-        yield "female";
-    default:
-        yield "unknown";
-};
+public void switchTest() {
+    // we also can use traditional switch to return value, but we must use yield keyword
+    // and yield contains break.
+    int gender = 1;
+    String sex = switch (gender) {
+        case 1:
+            yield "male";
+        case 2:
+            yield "female";
+        default:
+            yield "unknown";
+    };
 
-System.out.println(sex);
+    System.out.println(sex);
+}
 ```
-2. ***text block(preview)，在java15中finalized, 可以在文本前后使用三个双引号"""来表示文本块。比如一个json文本，中间就不用加换行符了，直接头和尾加上"""，中间正常换行就可以。并且该方式的json字符串可以直接被转换成对象。***
+2. ***text block(preview，finalized in jdk15), we can use """ to wrap the content and keep the format of the text. e.g. we can input the content of json format between """, also the content can be converted to a json object.***
 ```java
 public class TextBlockTest {
     private String testJson = """
